@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisei | Minecraft Community</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>KISEI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#server">Server Info</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Kisei</h1>
+            <p>The ultimate Minecraft community for builders, adventurers, and creators</p>
+            <div class="cta-buttons">
+                <a href="#server" class="btn btn-primary">Join Server</a>
+                <a href="#features" class="btn btn-secondary">Explore Features</a>
+            </div>
+            <div class="server-stats">
+                <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <span class="player-count">1,248</span> Online Players
+                </div>
+                <div class="stat">
+                    <i class="fas fa-trophy"></i>
+                    <span>3</span> Game Modes
+                </div>
+                <div class="stat">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>24/7</span> Uptime
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="minecraft-scene">
+                <div class="grass-block"></div>
+                <div class="dirt-block"></div>
+                <div class="stone-block"></div>
+                <div class="character"></div>
+                <div class="tree">
+                    <div class="leaves"></div>
+                    <div class="trunk"></div>
+                </div>
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Community Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Survival</h3>
+                <p>Explore vast lands, build communities, and survive together in our balanced survival world with land claims and economy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3>Creative</h3>
+                <p>Unleash your imagination in our creative world with WorldEdit, unlimited resources, and dedicated plot areas for builders.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+                <h3>Minigames</h3>
+                <p>Enjoy various minigames including Spleef, Bed Wars, Parkour, and custom PvP arenas designed by our community.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Active Community</h3>
+                <p>Join our Discord server with 24/7 staff support, regular events, building contests, and a friendly player base.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Anti-Grief</h3>
+                <p>Advanced protection systems ensure your builds and items are safe. Regular backups guarantee no data loss.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Custom Plugins</h3>
+                <p>Unique gameplay experiences with custom plugins, quests, pets, and special items you won't find on other servers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Server Info Section -->
+    <section id="server" class="server-info">
+        <div class="server-container">
+            <h2 class="section-title">Join Our Server</h2>
+            <div class="server-details">
+                <div class="server-address">
+                    <h3>Server Address</h3>
+                    <div class="address-container">
+                        <input type="text" id="server-ip" value="play.kisei-mc.com" readonly>
+                        <button class="copy-btn" id="copy-btn">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <p class="version">Version: 1.16.5 - 1.20.4 (Supports all versions)</p>
+                </div>
+                <div class="how-to-join">
+                    <h3>How to Join</h3>
+                    <ol>
+                        <li>Launch Minecraft Java Edition</li>
+                        <li>Click "Multiplayer" then "Add Server"</li>
+                        <li>Enter the server address above</li>
+                        <li>Click "Done" and join the adventure!</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="server-rules">
+                <h3>Basic Rules</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> No griefing or stealing</li>
+                    <li><i class="fas fa-check"></i> Be respectful to all players</li>
+                    <li><i class="fas fa-check"></i> No cheating or hacked clients</li>
+                    <li><i class="fas fa-check"></i> Have fun and build amazing things!</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Community Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1594303358360-6819b45b87ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Survival City</h3>
+                    <p>Built by community members</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Redstone Contraptions</h3>
+                    <p>Engineering marvels</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1594305178206-8a067f6b59f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Adventure Maps</h3>
+                    <p>Custom challenges</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Pixel Art Gallery</h3>
+                    <p>Creative expressions</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1594303176159-56b8c910c5a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Underground Bases</h3>
+                    <p>Hidden masterpieces</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1594302553371-36c21f8c481a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80')">
+                <div class="gallery-overlay">
+                    <h3>Community Events</h3>
+                    <p>Building competitions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
+        <h2 class="section-title">Community Rules</h2>
+        <div class="rules-container">
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-hand-paper"></i>
+                </div>
+                <h3>Respect Others</h3>
+                <p>Treat all players with respect. No harassment, hate speech, or discrimination of any kind will be tolerated.</p>
+            </div>
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-ban"></i>
+                </div>
+                <h3>No Griefing</h3>
+                <p>Do not destroy or tamper with other players' builds without explicit permission. Use claims to protect your builds.</p>
+            </div>
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>No Cheating</h3>
+                <p>Using hacked clients, cheats, or exploits that give unfair advantages is strictly prohibited and will result in a ban.</p>
+            </div>
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Chat Guidelines</h3>
+                <p>Keep chat appropriate for all ages. No spamming, excessive caps, or advertising other servers/services.</p>
+            </div>
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>Staff Authority</h3>
+                <p>Respect staff decisions. If you have concerns about moderation, contact a higher staff member through proper channels.</p>
+            </div>
+            <div class="rule-card">
+                <div class="rule-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Have Fun!</h3>
+                <p>Minecraft is about creativity and enjoyment. Help create a positive environment where everyone can have fun.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><i class="fas fa-server"></i> play.kisei-mc.com</li>
+                        <li><i class="fas fa-discord"></i> discord.kisei-mc.com</li>
+                        <li><i class="fas fa-envelope"></i> contact@kisei-mc.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Global Community</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="kisei-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-cube"></i>
+                <span>KISEI</span>
+            </div>
+            <p>The ultimate Minecraft community since 2020. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#server">Server Info</a>
+                <a href="#rules">Rules</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Kisei Minecraft Community. Not affiliated with Mojang Studios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
