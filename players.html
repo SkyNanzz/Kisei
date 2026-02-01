@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players - Kisei Minecraft Community</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>KISEI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#server">Server Info</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#rules">Rules</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="players.html" class="active">Players</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Players Section -->
+    <section id="players" class="players">
+        <h2 class="section-title">Community Players</h2>
+        <div class="add-player-form">
+            <h3>Add New Player</h3>
+            <form id="add-player-form">
+                <div class="form-group">
+                    <input type="text" id="player-name" placeholder="Player Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="url" id="skin-url" placeholder="Skin Image URL" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Player</button>
+            </form>
+        </div>
+        <div class="players-grid" id="players-grid">
+            <!-- Players will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-cube"></i>
+                <span>KISEI</span>
+            </div>
+            <p>The ultimate Minecraft community since 2020. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#server">Server Info</a>
+                <a href="index.html#rules">Rules</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="players.html">Players</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Kisei Minecraft Community. Not affiliated with Mojang Studios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="players.js"></script>
+</body>
+</html>
