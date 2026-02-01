@@ -1,146 +1,127 @@
-// Navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Section navigation
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('.section');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all links and sections
-            navLinks.forEach(l => l.classList.remove('active'));
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Show corresponding section
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).classList.add('active');
-            
-            // Close mobile menu if open
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navList = document.querySelector('.nav-links');
-            if (navList.classList.contains('show')) {
-                navList.classList.remove('show');
-                mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-            
-            // Scroll to top of section
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+});
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
             window.scrollTo({
-                top: 0,
+                top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
             });
-        });
-    });
-    
-    // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navList = document.querySelector('.nav-links');
-    
-    mobileMenu.addEventListener('click', function() {
-        navList.classList.toggle('show');
-        if (navList.classList.contains('show')) {
-            this.innerHTML = '<i class="fas fa-times"></i>';
-        } else {
-            this.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
+});
+
+// Server IP Copy Functionality
+const copyBtn = document.getElementById('copy-btn');
+const serverIp = document.getElementById('server-ip');
+const originalBtnText = copyBtn.innerHTML;
+
+copyBtn.addEventListener('click', () => {
+    serverIp.select();
+    document.execCommand('copy');
     
-    // Player count simulation
-    const playerCountElement = document.getElementById('player-count');
-    const modCountElement = document.getElementById('mod-count');
+    // Visual feedback
+    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    copyBtn.style.background = 'var(--success)';
     
-    function updatePlayerCount() {
-        const baseCount = 24;
-        const fluctuation = Math.floor(Math.random() * 10) - 5;
-        const newCount = Math.max(5, baseCount + fluctuation);
-        playerCountElement.textContent = newCount;
-        
-        // Update mod count based on player count
-        const modCount = Math.max(2, Math.floor(newCount / 5));
-        modCountElement.textContent = modCount;
-    }
-    
-    // Update player count every 30 seconds
-    updatePlayerCount();
-    setInterval(updatePlayerCount, 30000);
-    
-    // Leaderboard functionality
-    const skillSelect = document.getElementById('skill-select');
-    const playerSearch = document.getElementById('player-search');
-    const leaderboardBody = document.getElementById('leaderboard-body');
-    const originalRows = leaderboardBody.innerHTML;
-    
-    // Sort leaderboard by selected skill
-    skillSelect.addEventListener('change', function() {
-        filterLeaderboard();
-    });
-    
-    // Search players in leaderboard
-    playerSearch.addEventListener('input', function() {
-        filterLeaderboard();
-    });
-    
-    function filterLeaderboard() {
-        const skill = skillSelect.value;
-        const searchTerm = playerSearch.value.toLowerCase();
-        
-        // For a real implementation, this would fetch data from the server
-        // For this demo, we'll just simulate filtering
-        
-        if (searchTerm) {
-            // This is a simplified simulation - in a real app we'd have full data
-            const rows = leaderboardBody.getElementsByTagName('tr');
-            for (let row of rows) {
-                const playerName = row.cells[1].textContent.toLowerCase();
-                if (playerName.includes(searchTerm)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            }
-        } else {
-            leaderboardBody.innerHTML = originalRows;
-        }
-    }
-    
-    // Form submission handling
-    const messageForm = document.getElementById('message-form');
-    const formMessage = document.getElementById('form-message');
-    
-    messageForm.addEventListener('submit', function(e) {
+    // Reset after 2 seconds
+    setTimeout(() => {
+        copyBtn.innerHTML = originalBtnText;
+        copyBtn.style.background = '';
+    }, 2000);
+});
+
+// Form Submission Handling
+const contactForm = document.getElementById('kisei-form');
+
+if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // In a real implementation, this would send data to a server
-        // For this demo, we'll just show a success message
+        // Get form values
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const email = contactForm.querySelector('input[type="email"]').value;
+        const message = contactForm.querySelector('textarea').value;
+        
+        // In a real application, you would send this data to a server
+        console.log('Form submitted:', { name, email, message });
         
         // Show success message
-        formMessage.textContent = 'Thank you for your message! We will respond within 24 hours.';
-        formMessage.className = 'success';
+        alert(`Thank you ${name}! Your message has been received. We'll get back to you at ${email} soon.`);
         
         // Reset form
-        messageForm.reset();
+        contactForm.reset();
+    });
+}
+
+// Player count animation
+function animatePlayerCount() {
+    const playerCountElement = document.querySelector('.player-count');
+    if (!playerCountElement) return;
+    
+    let count = parseInt(playerCountElement.textContent.replace(',', ''));
+    const maxCount = 1500;
+    const minCount = 1200;
+    const updateInterval = 2000;
+    
+    setInterval(() => {
+        // Randomly increase or decrease the count within bounds
+        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        count = Math.max(minCount, Math.min(maxCount, count + change));
         
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+        // Format with comma
+        playerCountElement.textContent = count.toLocaleString();
+    }, updateInterval);
+}
+
+// Initialize animations when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    animatePlayerCount();
+    
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(20, 20, 20, 0.95)';
+            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.4)';
+        } else {
+            navbar.style.background = 'rgba(42, 42, 42, 0.95)';
+            navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.5)';
+        }
     });
     
-    // Gallery image hover effect enhancement
+    // Add hover effect to gallery items
     const galleryItems = document.querySelectorAll('.gallery-item');
     galleryItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'scale(1.05)';
         });
         
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'scale(1)';
         });
     });
-    
-    // Initialize with home section active
-    document.querySelector('#home').classList.add('active');
 });
